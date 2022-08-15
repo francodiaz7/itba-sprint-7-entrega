@@ -1,4 +1,4 @@
-# Sprint 7
+# SPRINT 7
 
 # TukiStack
 
@@ -14,7 +14,7 @@
 |  1  | Lopez Gutierrez Daniel Benjamin | [DanielBenjaminLopez][1] |
 |  2  |          Molina Elias           |      [Elias-m7][2]       |
 |  3  |      Vargas Laura Nazarena      |      [lauranv28][3]      |
-|  4  |          Llanos Facundo         |    [facundollanos][4]    |
+|  4  |         Llanos Facundo          |    [facundollanos][4]    |
 
 [0]: https://github.com/francodiaz7
 [1]: https://github.com/DanielBenjaminLopez
