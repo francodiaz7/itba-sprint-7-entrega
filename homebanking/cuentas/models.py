@@ -1,13 +1,18 @@
 from django.db import models
-from ..clientes.models import Cliente
+from clientes.models import Cliente
 
-# Create your models here.
 class Cuenta(models.Model):
-    account = models.IntegerField(primary_key=True, verbose_name='Cuenta')
+    id = models.AutoField(primary_key=True)
+    account = models.IntegerField(max_length=70, null=False, blank=False)
     customer = models.ForeignKey(Cliente, models.DO_NOTHING)
-    balance = models.IntegerField(verbose_name='Balance')
-    iban = models.CharField(verbose_name='IBAN')
+    balance = models.IntegerField('Balance', null=False, blank=False)
+    iban = models.CharField('IBAN')
 
     class Meta:
-        manage = True
-        db_table = 'cuenta'
+        verbose_name = 'Cuenta'
+        verbose_name_plural = 'Cuentas'
+        #Si se usa la base de datos del sprint 6
+        #db_table = 'cuentas'
+
+    def __str__(self):
+        return self.account

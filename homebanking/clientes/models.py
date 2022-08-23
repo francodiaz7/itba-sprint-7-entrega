@@ -1,13 +1,17 @@
 from django.db import models
 
-# Create your models here.
 class Cliente(models.Model):
-    customer = models.IntegerField(primary_key=True)
-    customer_name = models.CharField(verbose_name='Nombre', max_length=70)
-    customer_surname = models.CharField(verbose_name='Apellido', max_length=70)
-    customer_DNI = models.IntegerField(verbose_name='DNI', max_length=10)
-    dob = models.DateField(verbose_name='Fecha de nacimiento')
+    customer = models.AutoField(primary_key=True)
+    customer_name = models.CharField('Nombre', max_length=255, null=False, blank=False)
+    customer_surname = models.CharField('Apellido', max_length=255, null=False, blank=False)
+    customer_DNI = models.IntegerField('DNI', max_length=8, null=False, blank=False)
+    dob = models.DateField('Fecha de nacimiento', null=False, blank=False)
 
     class Meta:
-        managed = True
-        db_table = 'cliente'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+        #Si se usa la base de datos del sprint 6
+        # db_table = 'clientes'
+
+    def __str__(self):
+        return self.customer

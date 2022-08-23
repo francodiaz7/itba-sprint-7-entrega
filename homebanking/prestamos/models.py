@@ -1,14 +1,18 @@
 from django.db import models
-from ..clientes.models import Cliente
+from clientes.models import Cliente
 
-# Create your models here.
 class Prestamos(models.Model):
     loan = models.IntegerField(primary_key=True)
-    loan_type = models.CharField(verbose_name='Tipo de préstamo', max_length=20)
-    loan_date = models.DateField(verbose_name='Fecha')
-    loan_total = models.IntegerField(verbose_name='Monto', max_length=20)
+    loan_type = models.CharField('Tipo de préstamo', max_length=70, null=False, blank=False)
+    loan_date = models.DateField('Fecha')
+    loan_total = models.IntegerField('Monto', max_length=70, null=False, blank=False)
     customer = models.IntegerField(Cliente, models.DO_NOTHING)
 
     class Meta:
-        manage = True
-        db_table = 'prestamo'
+        verbose_name = 'Préstamo'
+        verbose_name_plural = 'Préstamos'
+        #Si se usa la base de datos del sprint 6
+        #db_table = 'prestamo'
+
+    def __str__(self):
+        return self.loan
