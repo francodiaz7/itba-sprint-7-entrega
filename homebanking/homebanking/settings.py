@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'login',
     'prestamos',
     'tarjetas',
+    'empleados',
+    'movimientos',
 ]
 
 MIDDLEWARE = [
