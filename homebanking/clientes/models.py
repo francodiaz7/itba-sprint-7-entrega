@@ -2,12 +2,11 @@ from django.db import models
 from django.apps import AppConfig
 
 class Cliente(models.Model):
-    customer_id = models.AutoField(primary_key=True)
-    customer_name = models.TextField('Nombre', max_length=255, blank=False, null=False)
-    customer_surname = models.TextField('Apellido', max_length=255, blank=False, null=False)  # This field type is a guess.
-    customer_dni = models.TextField('DNI', max_length=8, db_column='customer_DNI', blank=False, null=False)  # Field name made lowercase.
-    dob = models.TextField('Fecha de nacimiento', blank=False, null=False)
-    branch_id = models.IntegerField()
+    customer = models.AutoField(primary_key=True)
+    customer_name = models.CharField('Nombre', max_length=255, null=False, blank=False)
+    customer_surname = models.CharField('Apellido', max_length=255, null=False, blank=False)
+    customer_DNI = models.IntegerField('DNI', max_length=8, null=False, blank=False)
+    dob = models.DateField('Fecha de nacimiento', null=False, blank=False)
 
     class Meta:
         managed = False
