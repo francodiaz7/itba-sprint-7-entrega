@@ -13,4 +13,10 @@
 {% endblock %}
 
 <!--Agrega el contenido-->
-{% block content %} {% endblock %}
+{% block content %} {% for cliente in clientes %}
+<div class="row">
+  <div class="col-lg-7 col-md-8">
+    <h2 class="'section-heading title">{{cliente.nombre, cliente.apellido}}</h2>
+  </div>
+</div>
+{% endblock %}

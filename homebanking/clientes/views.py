@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from .models import Cliente
 
-# Create your views here.
 def clientes(request):
-    return render(request,"clientes/clientes.html")
+    clientes = Cliente.objects.all()
+    return render(request,"clientes/clientes.html", {'clientes':clientes})

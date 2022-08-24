@@ -1,18 +1,15 @@
 from django.db import models
 from clientes.models import Cliente
 
-class Prestamos(models.Model):
-    loan = models.IntegerField(primary_key=True)
-    loan_type = models.CharField('Tipo de préstamo', max_length=70, null=False, blank=False)
-    loan_date = models.DateField('Fecha')
-    loan_total = models.IntegerField('Monto', max_length=70, null=False, blank=False)
-    customer = models.IntegerField(Cliente, models.DO_NOTHING)
+class Prestamo(models.Model):
+    loan_id = models.AutoField(primary_key=True)
+    loan_type = models.TextField('Tipo de préstamo', max_length=30, blank=False, null=False)
+    loan_date = models.TextField('Fecha', blank=False, null=False)
+    loan_total = models.IntegerField('Total', blank=False, null=False)
+    customer_id = models.ForeignKey(Cliente, models.DO_NOTHING)
 
     class Meta:
+        managed = False
+        db_table = 'prestamo'
         verbose_name = 'Préstamo'
         verbose_name_plural = 'Préstamos'
-        #Si se usa la base de datos del sprint 6
-        #db_table = 'prestamo'
-
-    def __str__(self):
-        return self.loan
