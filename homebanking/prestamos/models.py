@@ -1,7 +1,7 @@
 from django.db import models
 from clientes.models import Cliente
 
-class Prestamo(models.Model):
+class Prestamos(models.Model):
     loan_id = models.AutoField(primary_key=True)
     loan_type = models.TextField('Tipo de préstamo', max_length=30, blank=False, null=False)
     loan_date = models.TextField('Fecha', blank=False, null=False)
