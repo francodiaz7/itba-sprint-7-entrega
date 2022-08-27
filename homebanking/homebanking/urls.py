@@ -19,14 +19,17 @@ from clientes.views import clientes
 from cuentas.views import cuentas
 from prestamos.views import prestamos
 from tarjetas.views import tarjetas
-from login import views
+from login.views import login
+from home.views import home
 
 urlpatterns = [
     path('clientes/', clientes),
     path('cuentas/', cuentas),
     path('prestamos/', prestamos),
     path('tarjetas/', tarjetas),
-    path('', views.login),
+    path('', login),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('home/', home),
     path('admin/', admin.site.urls),
 ]
 

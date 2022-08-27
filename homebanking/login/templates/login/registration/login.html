@@ -1,0 +1,39 @@
+{% extends 'login/base.html' %}
+
+<!-- Agrega el título -->
+{% block title%}Login{% endblock %}
+
+<!-- Agrega el contenido -->
+{% block content %}
+
+<form method="post">
+  <div class="container justify-content-center pt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 position-absolute top-50 start-50 translate-middle">
+            <div class="card wcolor">
+              <div class="card-body text-black">
+                <h2 class="card-title text-center fw-bold p-2">
+                  Iniciar sesión
+                </h2>
+                {% csrf_token %}
+                <label for="user">
+                  Usuario
+                  <input type="text" name="username" />
+                </label>
+                <label for="password">
+                  Contraseña
+                  <input type="password" name="password" />
+                </label>
+                <button type="submit">Ingresar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
