@@ -81,11 +81,26 @@ WSGI_APPLICATION = 'homebanking.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {},
+    'sprint6': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'sprint6.sqlite3',
+        'NAME': 'sprint6.sqlite3',
+    },
+    #No lee esta base de datos, el error que sale es:
+    # settings.DATABASES is improperly configured. 
+    # Please supply the ENGINE value. 
+    # Check settings documentation for more details.
+
+    'db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
+
+DATABASE_ROUTERS = [
+    'homebanking.db_router.DbRouter',
+    'homebanking.sprint6_router.SprintSeisRouter'
+]
 
 
 # Password validation

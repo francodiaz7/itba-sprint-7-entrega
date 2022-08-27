@@ -26,7 +26,7 @@ urlpatterns = [
     path('cuentas/', cuentas),
     path('prestamos/', prestamos),
     path('tarjetas/', tarjetas),
-    path('login/', views.login, name="login"),
+    path('', views.login),
     path('admin/', admin.site.urls),
 ]
 
