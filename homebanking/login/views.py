@@ -1,6 +1,38 @@
-from django.shortcuts import render
+from multiprocessing import context
+from django.shortcuts import render, redirect
+from .models import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 # Create your views here.
-def login(request):
-    return render(request, "login/registration/login.html")
+def register(request):
+    """Crear un nuevo usuario"""
+    if request.method == 'POST':
+        #Accede a la información enviada a través del form
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            #Guarda el usuario creado en la db
+            form.save()
+            username = form.cleaned_data['username']
+            #Manda un mensaje al usuario de que su registro fue exitoso
+            messages.success(request, f'Usuario {username} creado')
+            return redirect('login')
+        #Si se accede a esta ruta por un método get
+        else:
+            form = UserCreationForm()
+    context = {'form':form}
+    return render(request, "login/registration/register.html", context)
 
+
+def login(request):
+    return render(request, 'login/restration/login.html')
+
+
+def home(request):
+    return render(request, 'login/registration/home.html')
+
+
+#Funciones para determinar si el usuario es cliente del banco o empleado
+def is_client(request, is_staff, is_superuser):
+    if is_staff == False and is_superuser == False:
+        return redirect('home')

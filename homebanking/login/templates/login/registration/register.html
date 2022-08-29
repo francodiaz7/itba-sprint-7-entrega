@@ -1,0 +1,20 @@
+{% extends 'login/base.html' %}
+
+<!-- Añade el contenido estático -->
+{% load static %}
+
+<!-- Añade el título de la página -->
+{% block title %} Registrarse {% endblock %}
+
+<!-- Añade el contenido de la página -->
+{% block content %}
+<!-- Crear usuario -->
+<form class="form" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit" id="submit" class="btn btn-light"></button>
+</form>
+
+<!-- Mensaje de creación de usuario exitoso -->
+{% if messages %} {% for message in messages %}
+<div class="notification {{ message.tags}}">{{ message }}</div>
+{% endfor %} {% endif %} {% endblock %}

@@ -20,8 +20,8 @@ from clientes.views import clientes
 from cuentas.views import cuentas
 from prestamos.views import prestamos
 from tarjetas.views import tarjetas
-from login.views import login
-from home.views import home
+from login.views import register, home
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('home/', home, name='home'),
@@ -29,9 +29,9 @@ urlpatterns = [
     path('cuentas/', cuentas, name='cuentas'),
     path('prestamos/', prestamos, name='prestamos'),
     path('tarjetas/', tarjetas, name='tarjetas'),
-    path('login/', login, name='login'),
+    path('login/', LoginView.as_view(template_name='login/registration/login.html'), name='login'),
+    #Falta template logout
+    path('register/', register, name='register'),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('contact/', include('contact.urls')),
 ]
 
