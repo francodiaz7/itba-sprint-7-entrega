@@ -25,14 +25,11 @@ def register(request):
 
 
 def login(request):
-    return render(request, 'login/restration/login.html')
+    return render(request, 'login/registration/login.html')
 
 
 def home(request):
     return render(request, 'login/registration/home.html')
 
 
-#Funciones para determinar si el usuario es cliente del banco o empleado
-def is_client(request, is_staff, is_superuser):
-    if is_staff == False and is_superuser == False:
-        return redirect('home')
+

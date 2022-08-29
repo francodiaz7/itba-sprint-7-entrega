@@ -23,6 +23,7 @@ from tarjetas.views import tarjetas
 from login.views import register, home
 from django.contrib.auth.views import LoginView, LogoutView
 
+
 urlpatterns = [
     path('home/', home, name='home'),
     path('clientes/', clientes, name='clientes'),
@@ -30,7 +31,8 @@ urlpatterns = [
     path('prestamos/', prestamos, name='prestamos'),
     path('tarjetas/', tarjetas, name='tarjetas'),
     path('login/', LoginView.as_view(template_name='login/registration/login.html'), name='login'),
-    #Falta template logout
+    #LOGOUT NO FUNCIONA, VER EN TEMPLATE BASE.HTML
+    path('logout/', LogoutView.as_view(template_name='login/registration/login.html'), name='logout'),
     path('register/', register, name='register'),
     path('admin/', admin.site.urls),
 ]
