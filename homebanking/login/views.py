@@ -19,8 +19,8 @@ def register(request):
             messages.success(request, f'Usuario {username} creado')
             return redirect('login')
         #Si se accede a esta ruta por un método get
-        else:
-            form = UserCreationForm()
+    else:
+        form = UserCreationForm()
     context = {'form':form}
     return render(request, "login/registration/register.html", context)
 
