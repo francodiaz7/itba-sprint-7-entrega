@@ -1,4 +1,5 @@
 from multiprocessing import context
+import re
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
@@ -29,6 +30,7 @@ def login(request):
 
 
 def home(request):
+    name = AuthUser.first_name
     return render(request, 'login/registration/home.html')
 
 

@@ -7,6 +7,9 @@
 {% block title%}Home{% endblock %}
 
 {% block content %}
+{% if messages %} {% for message in messages %}
+<div class="notification {{ message.tags}} text-white text-center fw-bold">{{ message }}</div>
+{% endfor %} {% endif %}
 <!-- COTIZACIONES -->
 <div class="container overflow-hidden position-relative pt-3">
       <div class="row gy-5">

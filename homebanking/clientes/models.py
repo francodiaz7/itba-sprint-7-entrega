@@ -1,16 +1,16 @@
 from django.db import models
 from django.apps import AppConfig
+from django.contrib.auth.models import User
 
 class Cliente(models.Model):
-    customer = models.AutoField(primary_key=True)
+    customer_id = models.AutoField(primary_key=True)
     customer_name = models.CharField('Nombre', max_length=255, null=False, blank=False)
     customer_surname = models.CharField('Apellido', max_length=255, null=False, blank=False)
     customer_DNI = models.IntegerField('DNI', null=False, blank=False)
     dob = models.DateField('Fecha de nacimiento', null=False, blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
-        db_table = 'cliente'
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
 
@@ -41,4 +41,3 @@ class TipoCliente(models.Model):
         managed = False
         db_table = 'tipo_cliente'
         verbose_name = 'Tipo de cliente'
-
