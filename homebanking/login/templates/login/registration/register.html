@@ -10,8 +10,21 @@
 {% block content %}
 <!-- Crear usuario -->
 <form class="form" method="post">
-  {% csrf_token %} {{form.as_p}}
-  <button type="submit" id="submit" class="btn btn-light"></button>
+  <div class="container">
+    <div class="row">
+      <div class="card bg-light">
+        <div class="card-body">
+          <div class="card-title text-black">
+            <h2 class="fw-bold">Nuevo usuario</h2>
+          </div>
+          {% csrf_token %} {{form.as_p}}
+          <button type="submit" id="submit" class="btn btn-dark">
+            Registrarse
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>
 
 <!-- Mensaje de creación de usuario exitoso -->
