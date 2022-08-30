@@ -4,6 +4,9 @@
 <!-- Agrega contenido estático-->
 {% load static %}
 
+<!-- Agrega título -->
+{% block title %}Atención al cliente{% endblock %}
+
 <!-- Agrega contenido -->
 {% block content %}
 <!-- BIENVENIDA -->
@@ -78,7 +81,9 @@
             <div class="col-6">
               <h1 class="h4 mb-2">Sucursales</h1>
               <p class="mb-1">
-                <a href="#" class="ocolor text-decoration-none">Turnos</a>
+                <a href="{% url 'turnos' %}" class="ocolor text-decoration-none"
+                  >Turnos</a
+                >
               </p>
               <p>
                 <a href="#" class="ocolor text-decoration-none">

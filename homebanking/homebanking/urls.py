@@ -20,13 +20,14 @@ from clientes.views import clientes
 from cuentas.views import cuentas
 from prestamos.views import prestamos
 from tarjetas.views import tarjetas
-from login.views import register, home
-from paginas.views import atencion_clientes
+from login.views import homebanking, register
+from paginas.views import atencion_clientes, home, beneficios, preguntas_frecuentes, turnos
 from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    path('homebanking/', home, name='homebanking'),
+    path('', home, name='home'),
+    path('homebanking/', homebanking, name='homebanking'),
     path('clientes/', clientes, name='clientes'),
     path('cuentas/', cuentas, name='cuentas'),
     path('prestamos/', prestamos, name='prestamos'),
@@ -35,6 +36,9 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='login/registration/login.html'), name='logout'),
     path('register/', register, name='register'),
     path('atencionclientes/', atencion_clientes, name='atencionclientes'),
+    path('beneficios/', beneficios, name='beneficios'),
+    path('preguntasfrecuentes/', preguntas_frecuentes, name='preguntasfrecuentes'),
+    path('turnos/', turnos, name='turnos'),
     path('admin/', admin.site.urls),
 ]
 

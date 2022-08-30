@@ -37,7 +37,7 @@
           <li class="nav-item">Hola home(name)</li>
         </ul> -->
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}">
+          <a class="navbar-brand">
             <img
               src="{% static 'login/img/itbanklogo3.png' %}"
               alt=""
@@ -46,6 +46,11 @@
               class="d-flex align-text-top"
             />
           </a>
+          {% if request.user.is_authenticated %}
+          <span class="navbar-text text-white fw-bold">
+            Hola {{ user.username }}</span
+          >
+          {% endif %}
           <!-- Hamburguesa -->
           <button
             class="navbar-toggler"

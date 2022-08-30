@@ -4,7 +4,7 @@
 {% load static %}
 
 <!-- Agrega el título -->
-{% block title%}Home{% endblock %}
+{% block title%}Homebanking{% endblock %}
 
 {% block content %}
 {% if messages %} {% for message in messages %}
@@ -175,7 +175,7 @@
                   <h1 class="h4 mb-2">Ayuda</h1>
                   <p class="mb-1">
                     <a
-                      href="atencionCliente.html"
+                      href="{% url 'atencionclientes' %}"
                       class="ocolor text-decoration-none"
                     >
                       <svg
@@ -195,7 +195,7 @@
                   </p>
                   <p>
                     <a
-                      href="preguntasFrecuentes.html"
+                      href="{% url 'preguntasfrecuentes' %}"
                       class="ocolor text-decoration-none"
                     >
                       <svg
@@ -436,5 +436,5 @@
       </div>
 </div>
 
-<script src="{% static 'home/js/fetch_api.js' %}"></script>
+<script src="{% static 'static/js/fetch_api.js' %}"></script>
 {% endblock %}
