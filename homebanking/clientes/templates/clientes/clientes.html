@@ -1,30 +1,11 @@
 <!--Agrega el bloque extends-->
-{% extends 'homebanking/templates/homebanking/base.html' %}
+{% extends 'login/base.html' %}
 
 <!-- Agregamos el contenido estático -->
 {% load static %}
 
 <!-- Agregamos el título de clientes -->
-{% block title %}ITBANK - Clientes {% endblock %}
-
-<!-- Agregamos la información que queremos en el header -->
-{% block headers %}
-<h1>Clientes</h1>
-{% endblock %}
+{% block title %}Perfil{% endblock %}
 
 <!--Agrega el contenido-->
-{% block content %} {% for cliente in clientes %}
-<div class="container justify-content-center pt-3">
-  <div class="row">
-    <div class="col-12">
-      <ul>
-        <li>
-          ACÁ IRÍA UNA LISTA PARA RELLENAR LOS DATOS DEL CLIENTE O LA
-          VISUALIZACIÓN DE ESOS DATOS QUE SALEN DE LA CLASE NO SÉ HACERLO, SI
-          ALGUIEN SABE Y LO PUEDE HACER JOYA SINO LO MIRO DESPUÉS
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-{% endblock %}
+{% block content %} {% endblock %}

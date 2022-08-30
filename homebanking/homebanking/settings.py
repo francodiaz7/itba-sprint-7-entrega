@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-''''clientes.apps.ClienteConfig', lo saque porque esta duplicado y da error'''
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clientes',
+    'clientes.apps.ClienteConfig',
     'cuentas',
     'login',
     'prestamos',

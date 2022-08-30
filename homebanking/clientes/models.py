@@ -11,11 +11,13 @@ class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
+        managed = False
+        db_table = 'clientes'
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
 
     def __str__(self):
-        return self.customer_id
+        return self.customer_name
 
 
 class DireccionCliente(models.Model):
