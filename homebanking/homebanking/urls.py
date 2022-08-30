@@ -21,19 +21,20 @@ from cuentas.views import cuentas
 from prestamos.views import prestamos
 from tarjetas.views import tarjetas
 from login.views import register, home
+from paginas.views import atencion_clientes
 from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    path('home/', home, name='home'),
+    path('homebanking/', home, name='homebanking'),
     path('clientes/', clientes, name='clientes'),
     path('cuentas/', cuentas, name='cuentas'),
     path('prestamos/', prestamos, name='prestamos'),
     path('tarjetas/', tarjetas, name='tarjetas'),
     path('login/', LoginView.as_view(template_name='login/registration/login.html'), name='login'),
-    #LOGOUT NO FUNCIONA, VER EN TEMPLATE BASE.HTML
     path('logout/', LogoutView.as_view(template_name='login/registration/login.html'), name='logout'),
     path('register/', register, name='register'),
+    path('atencionclientes/', atencion_clientes, name='atencionclientes'),
     path('admin/', admin.site.urls),
 ]
 

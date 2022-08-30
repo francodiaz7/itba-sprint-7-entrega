@@ -29,9 +29,9 @@ def login(request):
     return render(request, 'login/registration/login.html')
 
 
-def home(request):
+def homebanking(request):
     name = AuthUser.first_name
-    return render(request, 'login/registration/home.html')
+    return render(request, 'login/registration/homebanking.html')
 
 
 
