@@ -18,6 +18,9 @@ class AuthUser(models.Model):
         managed = False
         db_table = 'auth_user'
 
+    def __str__(self):
+        return self.username
+
 
 class AuthPermission(models.Model):
     """Permisos de usuario"""

@@ -6,8 +6,6 @@ class MarcasDeTarjetas(models.Model):
     marca_tarjeta = models.TextField('Marca tarjeta', max_length=70, blank=False, null=False)
 
     class Meta:
-        managed = False
-        db_table = 'marcas_de_tarjetas'
         verbose_name = 'Marca de tarjeta'
 
     def __str__(self):
@@ -24,7 +22,5 @@ class Tarjeta(models.Model):
     customer = models.ForeignKey(Cliente, models.DO_NOTHING)
 
     class Meta:
-        managed = False
-        db_table = 'tarjeta'
         verbose_name = 'Tarjeta'
         verbose_name_plural = 'Tarjetas'

@@ -9,7 +9,5 @@ class Prestamos(models.Model):
     customer_id = models.ForeignKey(Cliente, models.DO_NOTHING)
 
     class Meta:
-        managed = False
-        db_table = 'prestamo'
         verbose_name = 'Préstamo'
         verbose_name_plural = 'Préstamos'

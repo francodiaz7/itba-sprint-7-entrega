@@ -6,8 +6,6 @@ class TiposDeCuentas(models.Model):
     tipo_de_cuenta = models.TextField('Tipo de cuenta', max_length=30, blank=False, null=False)
 
     class Meta:
-        managed = False
-        db_table = 'tipos_de_cuentas'
         verbose_name = 'Tipo de cuenta'
 
     def __str__(self):
@@ -22,7 +20,5 @@ class Cuenta(models.Model):
     tipos_de_cuentas_id = models.ForeignKey(TiposDeCuentas, models.DO_NOTHING)  # This field type is a guess.
 
     class Meta:
-        managed = False
-        db_table = 'cuenta'
         verbose_name = 'Cuenta'
         verbose_name_plural = 'Cuentas'
