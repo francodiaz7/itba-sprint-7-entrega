@@ -5,15 +5,16 @@ from login.models import AuthUser
 class Cliente(models.Model):
     #Modelado como la tabla del sprint 6
     customer_id = models.AutoField(primary_key=True)
-    customer_name = models.CharField('Nombre', max_length=255, null=False, blank=False)
-    customer_surname = models.CharField('Apellido', max_length=255, null=False, blank=False)
+    customer_name = models.CharField('Nombre', max_length=255)
+    customer_surname = models.CharField('Apellido', max_length=255)
     customer_DNI = models.IntegerField('DNI', null=False, blank=False)
-    dob = models.DateField('Fecha de nacimiento', null=False, blank=False)
+    dob = models.DateField('Fecha de nacimiento',null=True)
     username = models.OneToOneField(AuthUser, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
+        db_table = 'cliente'
 
     def __str__(self):
         return self.username
@@ -30,6 +31,7 @@ class DireccionCliente(models.Model):
     class Meta:
         verbose_name = 'Dirección del cliente'
         verbose_name_plural = 'Direcciones del cliente'
+        db_table = 'direccion_cliente'
 
 
 class TipoCliente(models.Model):
@@ -38,3 +40,4 @@ class TipoCliente(models.Model):
 
     class Meta:
         verbose_name = 'Tipo de cliente'
+        db_table = 'tipo_cliente'

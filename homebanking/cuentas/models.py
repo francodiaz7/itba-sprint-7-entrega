@@ -7,6 +7,7 @@ class TiposDeCuentas(models.Model):
 
     class Meta:
         verbose_name = 'Tipo de cuenta'
+        db_table = 'tipo_de_cuentas'
 
     def __str__(self):
         return self.tipos_de_cuentas_id
@@ -22,3 +23,4 @@ class Cuenta(models.Model):
     class Meta:
         verbose_name = 'Cuenta'
         verbose_name_plural = 'Cuentas'
+        db_table = 'cuenta'

@@ -7,7 +7,7 @@ from cuentas.models import Cuenta
 
 # Create your views here.
 def prestamos(request):
-    prestamos_form = FormularioPrestamo
+    prestamos_form = FormularioPrestamo()
     if request.method == 'POST':
         if prestamos_form.is_valid():
             prestamos_form.save()

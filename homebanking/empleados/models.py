@@ -26,6 +26,6 @@ class DireccionEmpleado(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'direcciones'
+        db_table = 'direccion_empleado'
         verbose_name = 'Dirección del empleado'
         verbose_name_plural = 'Direcciones del empleado'
