@@ -11,7 +11,7 @@ class AuthUser(models.Model):
     email = models.CharField(max_length=254)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    date_joined = models.DateTimeField()
+    date_joined = models.DateTimeField(auto_now_add=True)
     first_name = models.CharField(max_length=150)
 
     class Meta:
