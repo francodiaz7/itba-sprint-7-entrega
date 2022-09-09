@@ -30,11 +30,7 @@ def register(request):
             NuevoCliente = Cliente(customer_DNI=dni, username_id=dni)
             NuevoCliente.save()
             return redirect('login')
-<<<<<<< HEAD
-    #Si se accede a esta ruta por un método get
-=======
         # Si se accede a esta ruta por un método get
->>>>>>> 2e579d382f636fe2f52101ed2f7898239142829f
     else:
         form = UserRegisterForm()
     context = {'form': form}
