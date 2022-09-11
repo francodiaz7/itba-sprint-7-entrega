@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 class AuthUser(models.Model):
     """Autenticación de usuario"""
     password = models.CharField(max_length=128)
@@ -19,7 +21,7 @@ class AuthUser(models.Model):
         db_table = 'auth_user'
 
     def __str__(self):
-        return self.username
+        return str(self.username)
 
 
 class AuthPermission(models.Model):
@@ -80,7 +82,8 @@ class DjangoAdminLog(models.Model):
     object_repr = models.CharField(max_length=200)
     action_flag = models.PositiveSmallIntegerField()
     change_message = models.TextField()
-    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    content_type = models.ForeignKey(
+        'DjangoContentType', models.DO_NOTHING, blank=True, null=True)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
     action_time = models.DateTimeField()
 
